@@ -11,6 +11,14 @@ public class DriverTest {
     public Timeout globalTimeout = Timeout.millis(100);
 
     @Test
+    public void testDriverInstance()
+    {
+        Driver tanner = new Driver("tanner",101);
+        assertEquals("tanner",tanner.getDriverName());
+        assertEquals(101,tanner.getDriverNum());
+    }
+
+    @Test
     public void testGetDriverName()
     {
         Driver tanner = new Driver("tanner",101);
@@ -37,6 +45,14 @@ public class DriverTest {
     }
 
     @Test
+    public void testToString()
+    {
+        Driver tanner = new Driver("tanner",101);
+        String expectedResult = "\nDriver Name: tanner\nDriver Number: "+101;
+        assertEquals(expectedResult, tanner.toString());
+    }
+
+    @Test
     public void testCheckStatus()
     {
         Driver tanner = new Driver("tanner",101);
@@ -47,6 +63,6 @@ public class DriverTest {
     public void testWaitTillBanned()
     {
         Driver tanner = new Driver("tanner",101);
-        tanner.waitTillbanned();
+        tanner.waitTillBanned();
     }
 }

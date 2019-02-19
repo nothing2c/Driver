@@ -60,7 +60,7 @@ public class Driver {
     }
 
 
-    public void waitTillbanned(){
+    public void waitTillBanned(){
         while (!banned){
 
         }
